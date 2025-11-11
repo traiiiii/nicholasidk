@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import LayoutWrapper from "./components/LayoutWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,17 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <header>
-
-        </header>
-
-        <main className="flex flex-1 items-center justify-center">{children}</main>
-
-        <footer className="pb-7 text-xl flex justify-center">
-          <Link className="px-2" href="/">Home</Link>
-          <Link className="px-2" href="/stress">Stress Meter</Link>
-        </footer>
-
+        <LayoutWrapper children={children}/>
       </body>
     </html>
   );
