@@ -38,7 +38,10 @@ function MailOpened() {
             <img
                 src="/mailopened.png"
                 alt="" />
-            <form action={loginAction} className="absolute right-25/100 top-45/100 flex flex-col items-center max-w-75 rotate-[-7.5deg]">
+            <form action={loginAction} className="
+            absolute flex flex-col items-center
+            right-25/100 top-45/100 
+            max-w-75 rotate-[-7.5deg]">
                 <div className="text-black m-2">
                     <input
                         className="text-center px-4 py-2 rounded-2xl bg-white border-[#00000036] border focus:outline-none text-2xl mb-3"

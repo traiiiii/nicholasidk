@@ -2,7 +2,7 @@
 "use server"
 
 import { z } from "zod"
-import { createSession } from "../lib/session"
+import { createSession, deleteSession } from "../lib/session"
 import { redirect } from "next/navigation"
 
 const loginSchema = z.object({
@@ -23,6 +23,9 @@ export async function login(prevState, formData) {
     } else {
         console.log("naaa")
     }
-    
+}
 
+export async function logout() {
+    await deleteSession();
+    redirect("/login")
 }

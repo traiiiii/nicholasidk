@@ -24,6 +24,7 @@ export async function createSession(userId) {
     })
 }
 
+
 export async function encrypt(payload) {
     return await new SignJWT(payload)
         .setProtectedHeader({ alg: "HS256" })
@@ -33,7 +34,8 @@ export async function encrypt(payload) {
 }
 
 export async function deleteSession() {
-    cookieStore().detele("session")
+    const cookieStore = await cookies()
+    cookieStore.delete("session")
 }
 
 export async function decrypt(session) {

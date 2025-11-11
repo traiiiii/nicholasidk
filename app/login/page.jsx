@@ -1,4 +1,5 @@
 
+import { deleteSession } from "../lib/session"
 import LoginForm from "./LoginForm"
 
 export default function Login() {
