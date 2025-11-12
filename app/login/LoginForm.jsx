@@ -3,13 +3,39 @@
 import { login } from "./actions"
 import { useActionState, useState } from "react"
 import { useFormStatus } from "react-dom"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function LoginForm() {
     const [mailOpened, setmailOpened] = useState(false)
 
     return (
         <div>
-            {!mailOpened ? <MailClosed onOpen={() => setmailOpened(true)} /> : <MailOpened />}
+            {!mailOpened ?
+
+                <motion.div key="closed"
+                    onClick={() => setmailOpened(true)}
+                    initial={{ opacity: 1, scale: 1, rotate: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, rotate: -5 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                    <img
+                        src="/mailclosed.png"
+                        alt="mail"
+                        className=""
+                    />
+                </motion.div>
+                :
+
+                <motion.div
+                    key="opened"
+                    initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                    <MailOpened />
+                </motion.div>
+            }
         </div>
     )
 }
@@ -62,13 +88,14 @@ function SubmitButton() {
 
     return (
         <button
-            className="relative bg-[#ffffffd7] text-[#f86ec3d7] p-2 rounded-md min-w-24
+            style={{ WebkitUserSelect: "none", WebkitTouchCallout: "none" }}
+            className="select-none relative bg-[#ffffffd7] text-[#f86ec3d7] p-2 rounded-md min-w-24
             shadow-md shadow-[#ffaddf] ring-1 ring-[#ff6c98]
             active:bg-[#f86ec3d7] active:text-[#ffffff]
             transition-all duration-200 ease-out"
             disabled={pending}
             type="submit">
-            SUBMIT ! 
+            SUBMIT !
         </button>
     )
 }
