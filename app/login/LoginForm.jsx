@@ -44,7 +44,7 @@ function MailOpened() {
             max-w-75 rotate-[-7.5deg]">
                 <div className="text-black m-2">
                     <input
-                        className="text-center px-4 py-2 rounded-2xl bg-white border-[#00000036] border focus:outline-none text-2xl mb-3"
+                        className="text-center px-4 py-2 rounded-2xl bg-white border-[#f86ec3d7] border focus:outline-none text-2xl mb-3 min-w-75"
                         id="password"
                         name="password"
                         placeholder="ENTER THE CODEE"
@@ -62,18 +62,13 @@ function SubmitButton() {
 
     return (
         <button
-            className="relative bg-white text-black p-2 rounded-sm min-w-24
-            after:absolute 
-            after:content-[''] 
-            after:bg-[#f57272] 
-            after:top-[-2px] after:left-[-2px] after:right-[-2px] after:bottom-[-2px]
-            after:[background:conic-gradient(from_0deg_at_50%_50%,#e927ac,#f50063,#008198,#0040ff,#4731fb,#f50060,#57c66f,#34d2a0,#e927ac)]
-            after:z-[-1]
-            after:rounded-md
-            "
+            className="relative bg-[#ffffffd7] text-[#f86ec3d7] p-2 rounded-md min-w-24
+            shadow-md shadow-[#ffaddf] ring-1 ring-[#ff6c98]
+            active:bg-[#f86ec3d7] active:text-[#ffffff]
+            transition-all duration-200 ease-out"
             disabled={pending}
             type="submit">
-            SUBMIT
+            SUBMIT ! 
         </button>
     )
 }
