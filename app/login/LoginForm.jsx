@@ -64,10 +64,18 @@ function MailOpened() {
             <img
                 src="/mailopened.png"
                 alt="" />
-            <form action={loginAction} className="
-            absolute flex flex-col items-center
-            right-25/100 top-45/100 
-            max-w-75 rotate-[-7.5deg]">
+            <motion.form action={loginAction}
+                className="absolute flex flex-col items-center
+                right-25/100 top-45/100 
+                max-w-75 rotate-[-7.5deg]"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.6,
+                    ease: "easeInOut",
+                    delay: 0.5,
+                }}
+            >
                 <div className="text-black m-2">
                     <input
                         className="text-center px-4 py-2 rounded-2xl bg-white border-[#f86ec3d7] border focus:outline-none text-2xl mb-3 min-w-75"
@@ -77,8 +85,8 @@ function MailOpened() {
                     />
                 </div>
                 <SubmitButton />
-            </form>
-        </div>
+            </motion.form>
+        </div >
     )
 }
 
