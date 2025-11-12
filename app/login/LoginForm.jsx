@@ -22,6 +22,10 @@ export default function LoginForm() {
                         src="/mailclosed.png"
                         alt="mail"
                         className=""
+                        style={{
+                            WebkitUserSelect: "none",
+                            WebkitTouchCallout: "none",
+                        }}
                     />
                 </motion.div>
                 :
@@ -64,7 +68,11 @@ function MailOpened() {
             <img
                 className="select-none"
                 src="/mailopened.png"
-                alt="" />
+                alt=""
+                style={{
+                    WebkitUserSelect: "none",
+                    WebkitTouchCallout: "none",
+                }} />
             <motion.form action={loginAction}
                 className="absolute flex flex-col items-center
                 right-25/100 top-45/100 
@@ -74,7 +82,7 @@ function MailOpened() {
                 transition={{
                     duration: 0.6,
                     ease: "easeInOut",
-                    delay: 0.5,
+                    delay: 0.2,
                 }}
             >
                 <div className="text-black m-2">
