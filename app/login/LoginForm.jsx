@@ -62,6 +62,7 @@ function MailOpened() {
     return (
         <div className="relative flex flex-col items-center">
             <img
+                className="select-none"
                 src="/mailopened.png"
                 alt="" />
             <motion.form action={loginAction}
